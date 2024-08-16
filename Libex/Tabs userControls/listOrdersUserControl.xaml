@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Libex.listOrdersUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Libex"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Padding="0 10 0 10" Background="{DynamicResource SecondaryAccentBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBlock Margin="35 0 0 0" Text="Search" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                    <materialDesign:ColorZone Margin="50 0 0 0" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Button IsEnabled="False" Style="{DynamicResource MaterialDesignToolButton}" Margin="0 0 0 0" VerticalAlignment="Center">
+                                <materialDesign:PackIcon Width="25" Height="25" Kind="Magnify" />
+                            </Button>
+                            <TextBox x:Name="searchBar" TextChanged="searchBar_TextChanged" Width="300" FontSize="15" materialDesign:HintAssist.Hint="Search an Order" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="addOrderBtn" Click="addOrderBtn_Click" Width="100" Content="Add Order" Margin="0 0 10 0"></Button>
+                </StackPanel>
+            </Grid>
+        </materialDesign:ColorZone>
+        <Button x:Name="refreshBtn" Click="refreshBtn_Click" Grid.Row="1" Height="35" Width="35" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Margin="0 0 10 0">
+            <materialDesign:PackIcon Kind="Refresh" Foreground="{DynamicResource PrimaryHueDarkBrush}" Width="35" Height="35" />
+        </Button>
+        <DataGrid Grid.Row="2" IsReadOnly="True" x:Name="ordersDataGrid" Background="White" AutoGenerateColumns="True" MaxWidth="1200">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Height="25" Background="{DynamicResource PrimaryHueDarkBrush}" Margin="0 0 10 0" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" ToolTip="Delete" x:Name="deleteBtn" Click="deleteBtn_Click">
+                                    <materialDesign:PackIcon Kind="Delete" ></materialDesign:PackIcon>
+                                </Button>
+                                <Button Height="25" Background="{DynamicResource PrimaryHueDarkBrush}" Margin="0 0 10 0" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" ToolTip="Sell order" x:Name="SellOrderBtn" Click="SellOrderBtn_Click" >
+                                    <materialDesign:PackIcon Kind="Check" ></materialDesign:PackIcon>
+                                </Button>
+                                <Button Height="25" Background="{DynamicResource PrimaryHueDarkBrush}"  BorderBrush="{DynamicResource PrimaryHueDarkBrush}" ToolTip="Print order" x:Name="printBtn"  Click="printBtn_Click" >
+                                    <materialDesign:PackIcon Kind="Printer" ></materialDesign:PackIcon>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

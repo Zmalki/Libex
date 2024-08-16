@@ -1,0 +1,74 @@
+﻿<ResourceDictionary 
+                    xmlns ="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- main window -->
+    <system:String x:Key="close">Fermer</system:String>
+    <system:String x:Key="login">connexion</system:String>
+    <system:String x:Key="welcome">BIENVENUE</system:String>
+    <system:String x:Key="welDescription">Merci d'avoir essayé Libex, notre humble application de gestion de bibliothèque, c'est une gestion de bibliothèque avancée facile à utiliser qui a les fonctionnalités principales de gestion  ainsi que d'autres  que nous voulons que vous vérifiiez qui rend la gestion de bibliothèque facile et amusante, Nous voulez savoir votre opinion d'elle, nous espérons que vous l'aimerez.</system:String>
+    <system:String x:Key="getStartedBtn">Commencer</system:String>
+    <system:String x:Key="genViewTitle">Vue générale</system:String>
+    <system:String x:Key="genViewText">Libex a été magnifiquement conçu pour avoir les fonctionnalités de gestion principales et de base de chaque application de gestion de bibliothèque, comme l'ajout, la suppression ou l'édition de livres dans votre bibliothèque, vous pouvez également ajouter des clients, les modifier ou les supprimer ... vous pouvez gérer les ventes et les loyers de les livres avec l'interface facile à utiliser et bien conçue qui rend la navigation dans l'ensemble de l'application simple et amusante.</system:String>
+    <system:String x:Key="addFeaturesTitle">Fonctionnalités supplémentaires</system:String>
+    <system:String x:Key="addFeaturesTxt1">En plus des principales fonctionnalités de Libex, il existe des onces plus avancées</system:String>
+    <system:String x:Key="addFeaturesTxt2">Par exemple un système de statistiques</system:String>
+    <system:String x:Key="statBtnText">Statistiques</system:String>
+    <system:String x:Key="multpOptionsTitle">Plusieurs Options</system:String>
+    <system:String x:Key="multpOptionsTxt">Une application avec une interface attrayante qui rend ces longues heures de gestion des données moins ennuyeuses et plus amusantes avec la possibilité de choisir parmi différents skins de l'application, vous pouvez choisir celui qui convient le mieux à votre goût, à part les skins il y en a d'autres options que vous pouvez personnaliser et qui se trouvent dans le paramètre.</system:String>
+    <system:String x:Key="blueMainBtnText">Bleu Amber</system:String>
+    <system:String x:Key="tealMainBtnText">Vert Amber</system:String>
+    <system:String x:Key="grayMainBtnText">Gris Amber</system:String>
+    <system:String x:Key="settingMainBtnText">Paramètres</system:String>
+    <system:String x:Key="mainAboutTxt">A propos</system:String>
+    <!-- splash window -->
+    <system:String x:Key="loadingTxt">Chargement...</system:String>
+    <!-- Left menu -->
+    <system:String x:Key="menuDashboardTxt">ACCUEIL</system:String>
+    <system:String x:Key="menuStatsTxt">STATISTIQUES</system:String>
+    <system:String x:Key="menuClientsTxt">CLIENTS</system:String>
+    <system:String x:Key="menuBooksTxt">LIVRES</system:String>
+    <system:String x:Key="menuOrdersTxt">DEMANDES</system:String>
+    <system:String x:Key="menuRBooksTxt">LIVRES RETOURNÉS</system:String>
+    <system:String x:Key="menuSalesAndRentsTxt">VENTES|LOCATION</system:String>
+    <system:String x:Key="menuSettingsTxt">PARAMETRES</system:String>
+    <!-- stats tab -->
+    <system:String x:Key="clientAnaliticsTxt">Analyse des clients</system:String>
+    <system:String x:Key="booksAnaliticsTxt">Livres statistiques</system:String>
+    <!-- setting tab -->
+    <system:String x:Key="globalSettTxt">Parametres generales</system:String>
+    <system:String x:Key="personelSettTxt">Parametres personnelles</system:String>
+    <!-- Sells and rents tab -->
+    <system:String x:Key="sellBookTxt">Vendre un livre</system:String>
+    <system:String x:Key="rentBookTxt">Louer un livre</system:String>
+    <!-- returned books tab -->
+    <system:String x:Key="booksReturningTodayTxt">Livres retournées aujourd'hui</system:String>
+    <system:String x:Key="delayedBooksTxt">Livres en retard</system:String>
+    <!-- Orders tab -->
+    <system:String x:Key="ListOfOrdersTxt">Listes des demandes</system:String>
+    <!-- clients tab -->
+    <system:String x:Key="clientsListTxt">Liste des clients</system:String>
+    <system:String x:Key="addClientsTxt">Ajouter un client</system:String>
+    <!-- Books tab -->
+    <system:String x:Key="forSaleBooksTxt">Livres a vendre</system:String>
+    <system:String x:Key="forRentBooksTxt">Livres a louer</system:String>
+    <system:String x:Key="currentlyRentBooksTxt">Livres actuellement louées</system:String>
+    <system:String x:Key="soldBooksTxt">Livres vendus</system:String>
+    <system:String x:Key="booksCategoriesTxt">Catégories de livres</system:String>
+    <!-- add client user control -->
+    <system:String x:Key="addClientUSTxt">Ajouter un client</system:String>
+    <system:String x:Key="nameHintUSTxt">Prenom</system:String>
+    <system:String x:Key="FnameHintUSTxt">Nom</system:String>
+    <system:String x:Key="genderHintUSTxt">Sex</system:String>
+    <system:String x:Key="agePHintTxt">Period d'age</system:String>
+    <system:String x:Key="maleGendercomboboxTxt">Male</system:String>
+    <system:String x:Key="femaleGendercomboboxTxt">Female</system:String>
+    <system:String x:Key="agePeriodKidComboTxt">Enfant</system:String>
+    <system:String x:Key="agePeriodTeenComboTxt">Jeun</system:String>
+    <system:String x:Key="agePeriodYaduntComboTxt">Jeun adult</system:String>
+    <system:String x:Key="agePeriodAdultComboTxt">Adulte</system:String>
+    <system:String x:Key="agePeriodMAgedComboTxt">Âge moyen</system:String>
+    <system:String x:Key="agePeriodElderComboTxt">Âgée</system:String>
+    <system:String x:Key="addClientBtnTxt">Ajouter un client</system:String>
+    <system:String x:Key="printBtnTxt">Imprimer</system:String>
+</ResourceDictionary>

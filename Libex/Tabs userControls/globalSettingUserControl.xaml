@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Libex.globalSettingUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"            
+             xmlns:local="clr-namespace:Libex"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!--main grid row definitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!--title part-->
+        <TextBlock Text="Global Settings" Foreground="{DynamicResource SecondaryAccentBrush}" FontSize="40" Margin="20 10 0 0"/>
+        <!--settings part-->
+        <StackPanel Grid.Row="1">
+            <materialDesign:Card Grid.Row="1" Margin="10">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Pick the application Theme" Margin="30 10 0 10" FontSize="20"/>
+                    <StackPanel Orientation="Horizontal" Margin="40 0 0 10">
+                        <Button Background="#2196F3" BorderBrush="{x:Null}" Width="140" Content="Blue Amber" x:Name="blueBtn" Click="blueBtn_Click"/>
+                        <Button Margin="10 0 10 0" BorderBrush="{x:Null}" Background="#009688" Width="140" Content="Teal Amber" x:Name="tealBtn" Click="tealBtn_Click" />
+                        <Button Background="#607D8B" BorderBrush="{x:Null}" Width="140" Content="Blue grey Amber" x:Name="blueGBtn" Click="blueGBtn_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Row="1" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Start with Windows" Margin="30 10 20 10" FontSize="20"/>
+                    <ToggleButton Name="startWWinBtn" Checked="startWWinBtn_Checked" Unchecked="startWWinBtn_Unchecked" Style="{StaticResource MaterialDesignSwitchToggleButton}" ToolTip="Default ToggleButton Style" />
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Row="1" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Create a backup file" Margin="30 10 20 10" FontSize="20"/>
+                    <Button x:Name="seletDirBtn" Click="seletDirBtn_Click" Content="Directory" Margin="0 0 20 0"></Button>
+                    <TextBlock Name="directoryBox" Text="" MaxWidth="300" VerticalAlignment="Center" ></TextBlock>
+                    <Button Margin="20 0 0 0" Content="Create backup" Name="createBkupBtn" Click="createBkupBtn_Click"></Button>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Row="1" Margin="10">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Pick the application Language" Margin="30 10 0 10" FontSize="20"/>
+                    <StackPanel Orientation="Horizontal" Margin="40 0 0 10">
+                        <Button Width="140" Content="English" x:Name="EnBtn" Click="EnBtn_Click"/>
+                        <Button Margin="10 0 10 0"   Width="140" Content="Franch" x:Name="FrBtn" Click="FrBtn_Click"/>
+                        <Button Width="140" Content="Arabic" x:Name="ArBtn" Click="ArBtn_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:Card>
+        </StackPanel>
+    </Grid>
+</UserControl>

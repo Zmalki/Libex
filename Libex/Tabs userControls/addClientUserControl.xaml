@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Libex.addClientUserControl"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Libex.Tabs_userControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--title row--> 
+            <RowDefinition Height="*"></RowDefinition>
+            <!--main content row--> 
+            <RowDefinition Height="4*"></RowDefinition>
+            <!--buttons row-->
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--title-->
+        <TextBlock Text="{DynamicResource addClientUSTxt}" Grid.Row="0" Margin="20 10 0 0" Style="{StaticResource MaterialDesignDisplay2TextBlock}" Foreground="{DynamicResource SecondaryAccentBrush}">
+            
+        </TextBlock>
+
+        
+        <!--main content grid-->
+        <Viewbox Grid.Row="1">
+
+            <materialDesign:Card HorizontalAlignment="Center" Padding="20" VerticalAlignment="Stretch" Margin="10" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                <StackPanel Orientation="Vertical">
+                    <!--first name part-->
+                    <TextBox Width="250" x:Name="addClientNameBox" Margin="0 20 0 0" materialDesign:HintAssist.Hint="{DynamicResource nameHintUSTxt}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBlock x:Name="hint1" Foreground="Red"/>
+                    <!--last name part-->
+
+                    <TextBox x:Name="addClientFnameBox" Width="250" Margin="0 20 0 0" materialDesign:HintAssist.Hint="{DynamicResource FnameHintUSTxt}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBlock x:Name="hint2" Foreground="Red"/>
+                    <!--gender part-->
+                    <ComboBox x:Name="addClientGenderBox" Margin="0 20 0 0" Width="250" materialDesign:HintAssist.Hint="{DynamicResource genderHintUSTxt}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBoxItem Content="{DynamicResource maleGendercomboboxTxt}">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource femaleGendercomboboxTxt}">
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock x:Name="hint3" Foreground="Red"/>
+                    <!--client age part-->
+                    <ComboBox x:Name="addClientAgeBox" Margin="0 20 0 0" Width="250" materialDesign:HintAssist.Hint="{DynamicResource agePHintTxt}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBoxItem Content="{DynamicResource agePeriodKidComboTxt}">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource agePeriodTeenComboTxt}">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource agePeriodYaduntComboTxt}">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource agePeriodAdultComboTxt}">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource agePeriodMAgedComboTxt}">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource agePeriodElderComboTxt}">
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock x:Name="hint4" Foreground="Red"/>
+                </StackPanel>
+            </materialDesign:Card>
+        </Viewbox>
+        <!--buttons stack panel-->
+        <StackPanel Grid.Row="2" Margin="0 10 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button materialDesign:ShadowAssist.ShadowDepth="Depth2" x:Name="addClientBtn" Click="addClientBtn_Click" Width="110" Content="{DynamicResource addClientBtnTxt}" Margin="0 0 10 0" Background="{DynamicResource SecondaryAccentBrush}" BorderBrush="{DynamicResource SecondaryAccentBrush}"/>
+            <Button materialDesign:ShadowAssist.ShadowDepth="Depth2" x:Name="printBtn" Click="printBtn_Click" Width="110" Content="{DynamicResource printBtnTxt}" Margin="10 0 0 0" Background="{DynamicResource SecondaryAccentBrush}" BorderBrush="{DynamicResource SecondaryAccentBrush}"/>
+        </StackPanel>
+        <!--snack bars that shows when adding or printing a client-->
+        <materialDesign:Snackbar Grid.Row="2" Message="Client Added" IsActive="False" x:Name="addSnackBar"/>
+        <materialDesign:Snackbar Grid.Row="2" Message="Preparing To Print" IsActive="False" x:Name="printSnackBar"/>
+    </Grid>
+</UserControl>

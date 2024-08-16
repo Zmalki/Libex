@@ -1,0 +1,293 @@
+﻿<Window x:Class="Libex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Libex"
+        mc:Ignorable="d"
+        Icon="Resources/appIcon.ico"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"           
+        Title="Libex" Height="700"  Width="1000" SizeChanged="Window_SizeChanged" MinWidth="1000"  MinHeight="700" WindowStartupLocation="CenterScreen" WindowStyle="None" StateChanged="Window_StateChanged" >
+
+    <!--removing the border on the window when resizing-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
+
+    <!--left menu drawer host-->
+    <materialDesign:DrawerHost x:Name="mainDrawerHost"  MouseDown="DrawerHost_MouseDown">
+        <materialDesign:DrawerHost.LeftDrawerContent>
+            <StackPanel Orientation="Horizontal" Background="{DynamicResource PrimaryHueDarkBrush}">
+                <Grid x:Name="MenuCursor" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Background="{DynamicResource SecondaryAccentBrush}" Width="10" Margin="0 117.5 0 0"></Grid>
+                <StackPanel Orientation="Vertical" Width="250" Background="{DynamicResource PrimaryHueDarkBrush}">
+                    <ToggleButton x:Name="closeMenuBtn" Foreground="White" Click="closeMenuBtn_Click" HorizontalAlignment="Right" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="x:Static Dock.Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}"/>
+                    <ListView  Margin="0 80 0 0" x:Name="MenuList" SelectionChanged="MenuList_SelectionChanged">
+                        <ListViewItem  Height="50">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Home" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuDashboardTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="50">
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="ChartBar" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuStatsTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="50">
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="AccountMultiple" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuClientsTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="50">
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="BookOpenPageVariant" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuBooksTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="50">
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="BookOpenVariant" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuOrdersTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="50">
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Undo" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuRBooksTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="50">
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="CashUsd" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuSalesAndRentsTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="50">
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Settings" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                                <TextBlock Text="{DynamicResource menuSettingsTxt}" FontSize="22" Foreground="White"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <Separator Width="150"/>
+                    </ListView>
+                </StackPanel>
+            </StackPanel>
+        </materialDesign:DrawerHost.LeftDrawerContent>
+
+        <!--about window-->
+        <!--dialog should be contained in a dialog host which surounds the whole window-->
+        <materialDesign:DialogHost >
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Width="300" Height="170" Orientation="Vertical">
+                    <TextBlock Height="130" Width="200" FontSize="15" xml:space="preserve">
+Libex version beta
+Developed by:
+Zineddine Malki
+oZoubia
+Summer 2018.
+                    </TextBlock>
+                    <Button Width="100" Background="{StaticResource SecondaryAccentBrush}" BorderBrush="{x:Null}" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">Close</Button>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+            <!--main grid-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="36"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                <!--top color zone-->
+                <materialDesign:ColorZone Mode="PrimaryDark"  Grid.Row="0"  MouseLeftButtonDown="ColorZone_MouseLeftButtonDown">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ToggleButton x:Name="openMenuBtn" VerticalAlignment="Center" Margin="5 0 0 0" Grid.Column="0" HorizontalAlignment="Left" ToolTip="Open Menu" Click="openMenuBtn_Click" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="x:Static Dock.Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}"/>
+                        <TextBlock Text="LibeX" Grid.Column="1" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" TextAlignment="Center"/>
+                        <Grid  Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 5 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="minimizeToTray"  Margin="1.5" Click="minimizeToTray_Click" ToolTip="Minimize to taskbar" HorizontalAlignment="Right" Padding="0 0 0 0" materialDesign:RippleAssist.IsDisabled="True" BorderBrush="{x:Null}" Background="{x:Null}">
+                                    <materialDesign:PackIcon  Kind="MenuDown" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24"/>
+                                </Button>
+                                <Button x:Name="minAppBtn"  Margin="1.5" Click="minAppBtn_Click" ToolTip="Minimize to taskbar" HorizontalAlignment="Right" Padding="0 0 0 0" materialDesign:RippleAssist.IsDisabled="True" BorderBrush="{x:Null}" Background="{x:Null}">
+                                    <materialDesign:PackIcon  Kind="WindowMinimize" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24"/>
+                                </Button>
+                            </StackPanel>
+                            <Button x:Name="maxAppBtn" Click="maxAppBtn_Click" ToolTip="Maximize" Grid.Column="1" Margin="1.5" HorizontalAlignment="Right" Padding="0 0 0 0" materialDesign:RippleAssist.IsDisabled="True" BorderBrush="{x:Null}" Background="{x:Null}">
+                                <materialDesign:PackIcon  Kind="WindowMaximize"  Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24"/>
+                            </Button>
+                            <Button x:Name="restoreAppBtn" ToolTip="Restore down" Click="restoreAppBtn_Click" Visibility="Collapsed" Grid.Column="1" Margin="1.5" HorizontalAlignment="Right" Padding="0 0 0 0" materialDesign:RippleAssist.IsDisabled="True" BorderBrush="{x:Null}" Background="{x:Null}">
+                                <materialDesign:PackIcon  Kind="WindowRestore"  Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24"/>
+                            </Button>
+                            <Button x:Name="exitAppBtn" Click="exitAppBtn_Click" Grid.Column="2" Margin="1.5"  ToolTip="Exit" HorizontalAlignment="Right" Padding="0 0 0 0" materialDesign:RippleAssist.IsDisabled="True" BorderBrush="{x:Null}" Background="{x:Null}">
+                                <materialDesign:PackIcon  Kind="FileExcelBox" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24"/>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </materialDesign:ColorZone>
+
+                <StackPanel Orientation="Horizontal" x:Name="gridMenu" Background="{DynamicResource PrimaryHueMidBrush}" Grid.Row="1">
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <StackPanel Margin="20 0 0 0" HorizontalAlignment="Center" Orientation="Vertical">
+                            <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0 0 0 0" Height="50" Width="50" >
+                                <materialDesign:PackIcon Kind="Information" Height="50" Width="50"></materialDesign:PackIcon>
+                            </Button>
+                            <TextBlock Foreground="white" Text="{DynamicResource mainAboutTxt}" TextAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <Grid HorizontalAlignment="Center" Grid.Row="2" >
+                    <!--tab control-->
+                    <dragablz:TabablzControl Loaded="tabControlDragable_Loaded"  ShowDefaultCloseButton="True" x:Name="tabControlDragable" >
+                        <TabItem Header="Welcome">
+                            <materialDesign:Card  Margin="20 30 20 10">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" >
+
+                                    <StackPanel>
+                                        <!--welcome part-->
+                                        <Expander HorizontalAlignment="Stretch" >
+                                            <Expander.Header>
+                                                <TextBlock Text="{DynamicResource welcome}" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignDisplay1TextBlock}" Foreground="{DynamicResource SecondaryAccentBrush}" />
+                                            </Expander.Header>
+                                            <Expander.Background>
+                                                <ImageBrush ImageSource="Resources/library2.jpg"  Stretch="UniformToFill"/>
+                                            </Expander.Background>
+                                            <Grid Margin="24,8,24,16">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <TextBlock Text="{DynamicResource welDescription}" TextWrapping="Wrap" Grid.Row="0" Foreground="White"  TextAlignment="Center" FontSize="23" HorizontalAlignment="Center">
+                                                
+                                                </TextBlock>
+                                                <Rectangle Grid.Row="0" Fill="White" Opacity="0.1"/>
+                                                <Button x:Name="getStartedBtn" Click="getStartedBtn_Click" Grid.Row="1" Margin="0 25 0 0 " Width="120" Height="38" Content="{DynamicResource getStartedBtn}" BorderBrush="{x:Null}" Background="{StaticResource SecondaryAccentBrush}"/>
+                                            </Grid>
+                                        </Expander>
+                                        <Border Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True"/>
+                                        <!--general view part-->
+                                        <Expander HorizontalAlignment="Stretch" Expanded="Expander_Expanded" Collapsed="Expander_Collapsed" >
+                                            <Expander.Header>
+                                                <TextBlock Text="{DynamicResource genViewTitle}" Style="{StaticResource MaterialDesignDisplay1TextBlock}" Foreground="{DynamicResource SecondaryAccentBrush}" HorizontalAlignment="Center" />
+                                            </Expander.Header>
+                                            <Expander.Background>
+                                                <ImageBrush ImageSource="Resources/stars.jpg" Stretch="UniformToFill"/>
+                                            </Expander.Background>
+                                            <Grid   Margin="24,8,24,16">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Rectangle Fill="White" Grid.Column="0" Opacity="0.1"/>
+                                                <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0 20 0 0">
+                                                    <TextBlock Text="{DynamicResource genViewText}" Grid.Row="0"  Foreground="White" TextWrapping="Wrap" TextAlignment="Center" FontSize="23">
+                                                
+                                                    </TextBlock>
+                                                    <Separator Height="10" Width="Auto" Margin="100 20 100 0"/>
+                                                </StackPanel>
+                                                <!--slideshow-->
+                                                <Border BorderThickness="2" BorderBrush="White" Grid.Column="1" Margin="20 0 0 0">
+                                                    <Image x:Name="SlideShowImageContainer"  Source="Resources/3.PNG" Stretch="Fill" Height="Auto" Width="Auto"   />
+                                                </Border>
+                                            </Grid>
+                                        </Expander>
+                                        <Border Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True"/>
+                                        <!--Additional features part-->
+                                        <Expander HorizontalAlignment="Stretch" >
+                                            <Expander.Header>
+                                                <TextBlock Text="{DynamicResource addFeaturesTitle}" Style="{StaticResource MaterialDesignDisplay1TextBlock}" Foreground="{DynamicResource SecondaryAccentBrush}" HorizontalAlignment="Center" />
+                                            </Expander.Header>
+                                            <Expander.Background>
+                                                <ImageBrush ImageSource="Resources/book.jpg" Stretch="UniformToFill"/>
+                                            </Expander.Background>
+                                            <StackPanel Orientation="Vertical"  Margin="24,8,24,16">
+                                                <!--transitions-->
+                                                <materialDesign:Transitioner SelectedIndex="0" AutoApplyTransitionOrigins="True">
+                                                    <materialDesign:TransitionerSlide OpeningEffect="{materialDesign:TransitionEffect FadeIn}">
+                                                        <!--first page-->
+                                                        <Grid  >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="45"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="45"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Button Grid.Column="3" x:Name="nextBtnFirstPage" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Padding="0 0 0 0"  Foreground="White" BorderBrush="{x:Null}" Background="{DynamicResource SecondaryAccentBrush}" ToolTip="Next" Command="{x:Static materialDesign:Transitioner.MoveNextCommand}">
+                                                                <materialDesign:PackIcon Kind="ArrowRightThick" Height="25" Width="25"/>
+                                                            </Button>
+                                                            <TextBlock Text="{DynamicResource addFeaturesTxt1}" Grid.Column="1" Foreground="White" Margin="5" TextWrapping="Wrap" TextAlignment="Center" FontSize="23">
+                                                                
+                                                            </TextBlock>
+                                                            <Rectangle Fill="White" Grid.Column="1" Opacity="0.1"/>
+                                                            <Image Source="Resources/an1.PNG" Grid.Column="2" Stretch="UniformToFill" Margin="20 0 0 0"/>
+                                                        </Grid>
+                                                    </materialDesign:TransitionerSlide>
+                                                    <materialDesign:TransitionerSlide OpeningEffect="{materialDesign:TransitionEffect FadeIn}">
+                                                        <!--second page-->
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="45"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="45"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Button Grid.Column="0" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Padding="0 0 0 0"  Foreground="White" BorderBrush="{x:Null}" Background="{DynamicResource SecondaryAccentBrush}" ToolTip="Previous" Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}">
+                                                                <materialDesign:PackIcon Kind="ArrowLeftThick" Height="25" Width="25"/>
+                                                            </Button>
+                                                            <TextBlock Text="{DynamicResource addFeaturesTxt2}" Grid.Column="1" Foreground="White" Margin="5" TextWrapping="Wrap" TextAlignment="Center" FontSize="23">
+                                                            </TextBlock>
+                                                            <Rectangle Fill="White" Grid.Column="1" Opacity="0.1"/>
+                                                            <Image Source="Resources/an2.PNG" Grid.Column="2" Stretch="UniformToFill" Margin="20 0 0 0"/>
+                                                        </Grid>
+                                                    </materialDesign:TransitionerSlide>
+                                                    <materialDesign:TransitionerSlide OpeningEffect="{materialDesign:TransitionEffect FadeIn}">
+                                                    </materialDesign:TransitionerSlide>
+                                                </materialDesign:Transitioner>
+                                                <Button x:Name="statisticsBtnInWelcomeTab" Click="statisticsBtnInWelcomeTab_Click" Width="100" Content="{DynamicResource statBtnText}" Background="{DynamicResource SecondaryAccentBrush}" BorderBrush="{x:Null}" Margin="0 10 0 0"/>
+                                            </StackPanel>
+                                        </Expander>
+                                        <Border Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True"/>
+                                        <!--Multiple options part-->
+                                        <Expander HorizontalAlignment="Stretch" >
+                                            <Expander.Header>
+                                                <TextBlock Text="{DynamicResource multpOptionsTitle}" Style="{StaticResource MaterialDesignDisplay1TextBlock}" Foreground="{DynamicResource SecondaryAccentBrush}" HorizontalAlignment="Center" />
+                                            </Expander.Header>
+                                            <Expander.Background>
+                                                <ImageBrush ImageSource="Resources/glow.jpg" Stretch="UniformToFill"/>
+                                            </Expander.Background>
+                                            <Grid Margin="20 0 20 0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Rectangle Fill="White" Grid.Column="0" Opacity="0.1"/>
+                                                <StackPanel Orientation="Vertical" Grid.Column="0" Margin="20 20 0 0">
+                                                    <TextBlock Text="{DynamicResource multpOptionsTxt}" Grid.Row="0"  Foreground="White" TextWrapping="Wrap" TextAlignment="Center" FontSize="23">
+                                                        
+                                                    </TextBlock>
+                                                    <Separator Height="10" Width="Auto" Margin="100 20 100 0"/>
+                                                    
+                                                </StackPanel>
+                                            </Grid>
+                                        </Expander>
+                                        <Border Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True"/>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </materialDesign:Card>
+                        </TabItem>
+                    </dragablz:TabablzControl>
+                </Grid>
+            </Grid>
+        </materialDesign:DialogHost>
+    </materialDesign:DrawerHost>
+</Window>

@@ -1,0 +1,75 @@
+﻿<ResourceDictionary 
+                    xmlns ="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- main window -->
+    <system:String x:Key="close">close</system:String>
+    <system:String x:Key="login">login</system:String>
+    <system:String x:Key="welcome">WELCOME</system:String>
+    <system:String x:Key="welDescription">Thank you for trying Libex our humble library management application it's an easy to use advanced library management that has the coremanagement features plus other new features that we want you to check out which makes library management easy and fun, check them all out and let us think what do you think about them, we hope that you love it.</system:String>
+    <system:String x:Key="getStartedBtn">Get started</system:String>
+    <system:String x:Key="genViewTitle">General view</system:String>
+    <system:String x:Key="genViewText">Libex was beautifully designed to have the main and core management features that every library management application has, like adding , deleting or editing books in your library, you can also add clients edit or delete them... you can manage the sales and rents of the books with the easy to use and well designed interface that makes navigating through the entire application simple and fun.</system:String>
+    <system:String x:Key="addFeaturesTitle">Additional features</system:String>
+    <system:String x:Key="addFeaturesTxt1">In addition to the main functionnalities that Libex has there are more advanced onces</system:String>
+    <system:String x:Key="addFeaturesTxt2">For example a statistics system there are more advanced onces</system:String>
+    <system:String x:Key="statBtnText">Statistics</system:String>
+    <system:String x:Key="multpOptionsTitle">Multiple options</system:String>
+    <system:String x:Key="multpOptionsTxt">An app with an attractive interface that makes those long hours of data management less boring and more fun with the ability to choose from different app themes, you can choose the one that best suits your taste, apart from the themes there are other options that you can customize and choose from.</system:String>
+    <system:String x:Key="blueMainBtnText">Blue Amber</system:String>
+    <system:String x:Key="tealMainBtnText">Teal Amber</system:String>
+    <system:String x:Key="grayMainBtnText">Gray Amber</system:String>
+    <system:String x:Key="settingMainBtnText">Settings</system:String>
+    <system:String x:Key="mainAboutTxt">About</system:String>
+    <!-- splash window -->
+    <system:String x:Key="loadingTxt">Loading...</system:String>
+    <!-- Left menu -->
+    <system:String x:Key="menuDashboardTxt">HOME</system:String>
+    <system:String x:Key="menuStatsTxt">STATISTICS</system:String>
+    <system:String x:Key="menuClientsTxt">CLIENTS</system:String>
+    <system:String x:Key="menuBooksTxt">BOOKS</system:String>
+    <system:String x:Key="menuOrdersTxt">ORDERS</system:String>
+    <system:String x:Key="menuRBooksTxt">RETURNED BOOKS</system:String>
+    <system:String x:Key="menuSalesAndRentsTxt">SALES|RENTS</system:String>
+    <system:String x:Key="menuSettingsTxt">SETTINGS</system:String>
+    <!-- stats tab -->
+    <system:String x:Key="clientAnaliticsTxt">Clients Analytics</system:String>
+    <system:String x:Key="booksAnaliticsTxt">Books statistics</system:String>
+    <!-- setting tab -->
+    <system:String x:Key="globalSettTxt">Global settings</system:String>
+    <system:String x:Key="personelSettTxt">Personel settings</system:String>
+    <!-- Sells and rents tab -->
+    <system:String x:Key="sellBookTxt">Sell a book</system:String>
+    <system:String x:Key="rentBookTxt">Rent a book</system:String>
+    <!-- returned books tab -->
+    <system:String x:Key="booksReturningTodayTxt">Books returning today</system:String>
+    <system:String x:Key="delayedBooksTxt">Delayed books</system:String>
+    <!-- Orders tab -->
+    <system:String x:Key="ListOfOrdersTxt">Liste of orders</system:String>
+    <!-- clients tab -->
+    <system:String x:Key="clientsListTxt">Clients list</system:String>
+    <system:String x:Key="addClientsTxt">Add a client</system:String>
+    <!-- Books tab -->
+    <system:String x:Key="forSaleBooksTxt">For Sale Books</system:String>
+    <system:String x:Key="forRentBooksTxt">For Rent Books</system:String>
+    <system:String x:Key="currentlyRentBooksTxt">Currently Rend Books</system:String>
+    <system:String x:Key="soldBooksTxt">Sold Books</system:String>
+    <system:String x:Key="booksCategoriesTxt">Books Categories</system:String>
+    <!-- add client user control -->
+    <system:String x:Key="addClientUSTxt">Add a client</system:String>
+    <system:String x:Key="nameHintUSTxt">Name</system:String>
+    <system:String x:Key="FnameHintUSTxt">Familly name</system:String>
+    <system:String x:Key="genderHintUSTxt">Gender</system:String>
+    <system:String x:Key="agePHintTxt">Age period</system:String>
+    <system:String x:Key="maleGendercomboboxTxt">Male</system:String>
+    <system:String x:Key="femaleGendercomboboxTxt">Female</system:String>
+    <system:String x:Key="agePeriodKidComboTxt">Kid</system:String>
+    <system:String x:Key="agePeriodTeenComboTxt">Teenager</system:String>
+    <system:String x:Key="agePeriodYaduntComboTxt">Young adult</system:String>
+    <system:String x:Key="agePeriodAdultComboTxt">Adult</system:String>
+    <system:String x:Key="agePeriodMAgedComboTxt">Mid aged</system:String>
+    <system:String x:Key="agePeriodElderComboTxt">Elderly</system:String>
+    <system:String x:Key="addClientBtnTxt">Add client</system:String>
+    <system:String x:Key="printBtnTxt">Print</system:String>
+
+</ResourceDictionary>

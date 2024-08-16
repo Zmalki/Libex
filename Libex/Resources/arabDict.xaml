@@ -1,0 +1,74 @@
+﻿<ResourceDictionary 
+                    xmlns ="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- main window -->
+    <system:String x:Key="close">اغلاق</system:String>
+    <system:String x:Key="login">دخول</system:String>
+    <system:String x:Key="welcome">ترحيب</system:String>
+    <system:String x:Key="welDescription">شكرًا لكم على تجربة Libex ،انه تطبيقنا المتواضع لإدارة المكتبات ، إنه سهل الاستخدام و يحتوي المزايا الاساسية للدارة المكتبات كذلك على ميزات أخرى جديدة  تجعل  الإدارة سهلة وممتعة ، جرب التطبيق ودعنا نعرف رأيك فيه، نتمنى ان تحبه.</system:String>
+    <system:String x:Key="getStartedBtn">إبدا</system:String>
+    <system:String x:Key="genViewTitle">نظرة عامة</system:String>
+    <system:String x:Key="genViewText">تم تصميم التطبيق بشكل جميل بحيث يحتوي على ميزات الإدارة الرئيسية والأساسية التي يتمتع بها كل تطبيق لإدارة المكتبات ، مثل إضافة الكتب أو حذفها أو تحريرها في مكتبتك ، كما يمكنك إضافة عملاء تحريرهم أو حذفهم ... يمكنك إدارة مبيعات وإيجارات الكتب بواجهة سهلة الاستخدام ومصممة جيدًا تجعل التنقل عبر التطبيق بأكمله بسيطًا وممتعًا.</system:String>
+    <system:String x:Key="addFeaturesTitle">ميزات إضافية</system:String>
+    <system:String x:Key="addFeaturesTxt1">بالإضافة إلى الوظائف الرئيسية، هناك مهام أكثر تقدمًا</system:String>
+    <system:String x:Key="addFeaturesTxt2">على سبيل المثال نظام إحصائي</system:String>
+    <system:String x:Key="statBtnText">إحصائيات</system:String>
+    <system:String x:Key="multpOptionsTitle">إعدادات متنوعة</system:String>
+    <system:String x:Key="multpOptionsTxt">تطبيق بواجهة تجذب العين تجعل تلك الساعات الطويلة من إدارة البيانات أقل مللًا وأكثر متعة مع إمكانية الاختيار من بين الالوان المختلفة للتطبيق ، يمكنك اختيار التطبيق الذي يناسب ذوقك بشكل أفضل ، بخلاف الالوان الأخرى الموجودة الخيارات التي يمكنك تخصيصها والتي ستجدها في الإعداد.</system:String>
+    <system:String x:Key="blueMainBtnText">لون ازرق</system:String>
+    <system:String x:Key="tealMainBtnText">لون اخضر</system:String>
+    <system:String x:Key="grayMainBtnText">لون رمادي</system:String>
+    <system:String x:Key="settingMainBtnText">إعدادات</system:String>
+    <system:String x:Key="mainAboutTxt">حول</system:String>
+    <!-- splash window -->
+    <system:String x:Key="loadingTxt">جار التحميل...</system:String>
+    <!-- Left menu -->
+    <system:String x:Key="menuDashboardTxt">الصفحة الرئيسية</system:String>
+    <system:String x:Key="menuStatsTxt">الإحصائيات</system:String>
+    <system:String x:Key="menuClientsTxt">العملاء</system:String>
+    <system:String x:Key="menuBooksTxt">الكتب</system:String>
+    <system:String x:Key="menuOrdersTxt">الطلبات</system:String>
+    <system:String x:Key="menuRBooksTxt">الكتب المعادة</system:String>
+    <system:String x:Key="menuSalesAndRentsTxt">بيع او استعارة</system:String>
+    <system:String x:Key="menuSettingsTxt">الاعدادات</system:String>
+    <!-- stats tab -->
+    <system:String x:Key="clientAnaliticsTxt">تحليلات العملاء</system:String>
+    <system:String x:Key="booksAnaliticsTxt">إحصائيات الكتب</system:String>
+    <!-- setting tab -->
+    <system:String x:Key="globalSettTxt">إعدادات عامة</system:String>
+    <system:String x:Key="personelSettTxt">إعدادات شخصية</system:String>
+    <!-- Sells and rents tab -->
+    <system:String x:Key="sellBookTxt">بيع كتاب</system:String>
+    <system:String x:Key="rentBookTxt">استأجار كتاب</system:String>
+    <!-- returned books tab -->
+    <system:String x:Key="booksReturningTodayTxt">الكتب المعادة اليوم</system:String>
+    <system:String x:Key="delayedBooksTxt">الكتب المتأخرة</system:String>
+    <!-- Orders tab -->
+    <system:String x:Key="ListOfOrdersTxt">قائمة الطلبات</system:String>
+    <!-- clients tab -->
+    <system:String x:Key="clientsListTxt">قائمة العملاء</system:String>
+    <system:String x:Key="addClientsTxt">إضافة الزبون</system:String>
+    <!-- Books tab -->
+    <system:String x:Key="forSaleBooksTxt">كتب للبيع</system:String>
+    <system:String x:Key="forRentBooksTxt">كتب للإيجار</system:String>
+    <system:String x:Key="currentlyRentBooksTxt">كتب مستأجرة حاليا</system:String>
+    <system:String x:Key="soldBooksTxt">الكتب المباعة</system:String>
+    <system:String x:Key="booksCategoriesTxt">فئات الكتاب</system:String>
+    <!-- add client user control -->
+    <system:String x:Key="addClientUSTxt">أضف عميل</system:String>
+    <system:String x:Key="nameHintUSTxt">الإسم</system:String>
+    <system:String x:Key="FnameHintUSTxt">اللقب</system:String>
+    <system:String x:Key="genderHintUSTxt">الجنس</system:String>
+    <system:String x:Key="agePHintTxt">فترة العمر</system:String>
+    <system:String x:Key="maleGendercomboboxTxt">ذكر</system:String>
+    <system:String x:Key="femaleGendercomboboxTxt">أنثى</system:String>
+    <system:String x:Key="agePeriodKidComboTxt">طفل</system:String>
+    <system:String x:Key="agePeriodTeenComboTxt">شاب</system:String>
+    <system:String x:Key="agePeriodYaduntComboTxt">شاب بالغ</system:String>
+    <system:String x:Key="agePeriodAdultComboTxt">بالغ</system:String>
+    <system:String x:Key="agePeriodMAgedComboTxt">منتصف العمر</system:String>
+    <system:String x:Key="agePeriodElderComboTxt">مسن</system:String>
+    <system:String x:Key="addClientBtnTxt">أضف عميل</system:String>
+    <system:String x:Key="printBtnTxt">إطبع الآن</system:String>
+</ResourceDictionary>
